@@ -77,11 +77,14 @@ window.addEventListener('load', function(){
  
     function handleswipe(isrightswipe){
         if (!isrightswipe){
-            alert(window.location);
-            window.location.replace("02.html");
+            //alert(window.location);
+            alert("Siii");
+            //window.location.replace("02.html");
             
-        }
+        }else{
+            alert("Nooo");
             //touchsurface.innerHTML = 'Congrats, you\'ve made a <span style="color:red">right swipe!</span>'
+        }
         /*else{
             touchsurface.innerHTML = 'Condition for right swipe not met yet'
         }*/
@@ -95,11 +98,11 @@ window.addEventListener('load', function(){
         startY = touchobj.pageY
         startTime = new Date().getTime() // record time when finger first makes contact with surface
         e.preventDefault()
-    }, alert("entro touchstart"))
+    }, false)
  
     touchsurface.addEventListener('touchmove', function(e){
         e.preventDefault() // prevent scrolling when inside DIV
-    }, alert("entro touchmove"))
+    }, false)
  
     touchsurface.addEventListener('touchend', function(e){
         var touchobj = e.changedTouches[0]
@@ -109,7 +112,7 @@ window.addEventListener('load', function(){
         var swiperightBol = (elapsedTime <= allowedTime && dist >= threshold && Math.abs(touchobj.pageY - startY) <= 100)
         handleswipe(swiperightBol)
         e.preventDefault()
-    }, alert("entro touchend"))
+    }, false)
  
 }, false) // end window.onload
 </script>
