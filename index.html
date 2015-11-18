@@ -95,11 +95,11 @@ window.addEventListener('load', function(){
         startY = touchobj.pageY
         startTime = new Date().getTime() // record time when finger first makes contact with surface
         e.preventDefault()
-    }, false)
+    }, alert("entro touchstart"))
  
     touchsurface.addEventListener('touchmove', function(e){
         e.preventDefault() // prevent scrolling when inside DIV
-    }, false)
+    }, alert("entro touchmove"))
  
     touchsurface.addEventListener('touchend', function(e){
         var touchobj = e.changedTouches[0]
@@ -109,7 +109,7 @@ window.addEventListener('load', function(){
         var swiperightBol = (elapsedTime <= allowedTime && dist >= threshold && Math.abs(touchobj.pageY - startY) <= 100)
         handleswipe(swiperightBol)
         e.preventDefault()
-    }, false)
+    }, alert("entro touchend"))
  
 }, false) // end window.onload
 </script>
